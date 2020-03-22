@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档自动化处理系统</title>
+</head>
+<body>
+    <h1>文档自动化处理系统<h1>
+        <hr>
+        {% for post in posts %}
+
+                 <p style=";font-size: 14pt;font-weight: blod;">
+                      <a href="{{post.auto_type}}/{{post.pk}}">{{post.desc}}</a>
+                 </p>
+                 <p style=";font-size: 13pt;font-weight: blod;">
+                   {{post.auto_type}}--------{{post.func}}--------{{post.desc}}--------{{post.auther}}--------{{post.remarks}}
+                 </p>
+
+        {% endfor %}
+        <hr>
+        <h3>时间：{{ now }}</h3>
+</body>
+</html>

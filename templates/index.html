@@ -1,0 +1,18 @@
+<!--index-->
+{% extends 'base.html' %}
+{% block title %}欢迎光临的我的文档处理系统{% endblock %}
+{% block headmessage %}
+    <h3>试一下这是说明</h3>
+{% endblock %}
+{% block content %}
+        {% for post in posts %}
+
+                 <p style=";font-size: 14pt;font-weight: blod;">
+                      <a href="{{post.auto_type}}/{{post.pk}}">{{post.desc}}</a>
+                 </p>
+                 <p style=";font-size: 13pt;font-weight: blod;">
+                   {{post.auto_type}}--------{{post.func}}--------{{post.desc}}--------{{post.auther}}--------{{post.remarks}}
+                 </p>
+
+        {% endfor %}
+{% endblock %}

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>系统界面</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+{#   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">#}
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+{#  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
+   <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.m.css">
+  <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript"></script>
+    {#function getValue()#}
+    {#{#}
+    {#    var v = document.getElementById("tablename");#}
+    {#    alert(v.value);#}
+    {#    window.location = encodeURI("http://127.0.0.1:8000/4/" +v.value)#}
+        {#window.location.href="http://www.baidu.com/" ;#}
+    {#}#}
+    {#</script>#}
+</head>
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron">
+				<h1>
+					文档自动化处理平台
+				</h1>
+				<p>
+                    {{  posts.desc}}
+				</p>
+			</div>
+			<form role="form" action='4/' method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+				<div class="form-group" >
+					 <label for="tablename">请输入拆分列名</label><input type="text" class="form-control" name = "colname" id="tablename" />
+				</div>
+				<div class="form-group">
+                    <input type="file" style="width:40%" name="file" multiple="">
+{#					 <label for="exampleInputFile">File input</label><input type="file" id="exampleInputFile" />#}
+					<p class="help-block">
+						请选择拆分文件
+					</p>
+				</div>
+                     <button class="btn btn-primary size-MINI radius" type="submit" >运行</button>
+            </form>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

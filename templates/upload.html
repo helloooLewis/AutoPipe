@@ -1,0 +1,22 @@
+{% load static %}
+{#<!DOCTYPE html>#}
+<html>
+<head>
+  <title>系统界面</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">#}
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+ <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <form action="{% url 'basic:uploadtable' %}" method="post"
+              enctype="multipart/form-data">
+             {% csrf_token %}
+            <input type="file" style="width: 50%" name="file" id="filename">
+            <button class="btn btn-primary-outline radius size-S" type="submit">提交</button>
+        </form>
+    </div>
+</body>
+</html>
